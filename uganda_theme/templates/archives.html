@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Archives - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section class="archives">
+  <h1>Archives</h1>
+  
+  <div class="brutal-divider"></div>
+  
+  <ul class="archive-list">
+    {% for article in dates %}
+    <li class="archive-item">
+      <span class="date">{{ article.locale_date }}</span>
+      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+      {% if article.author %}
+      <span class="author">by {{ article.author }}</span>
+      {% endif %}
+      {% if article.category %}
+      <span class="category">in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}
