@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="article">
+  <header class="article-header">
+    <h1>{{ article.title }}</h1>
+    
+    <div class="article-meta">
+      <span class="date">{{ article.locale_date }}</span>
+      {% if article.author %}
+      <span class="author">By {{ article.author }}</span>
+      {% endif %}
+      {% if article.category %}
+      <span class="category">In <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+      {% endif %}
+    </div>
+  </header>
+  
+  <div class="flag-colors">
+    <div class="black"></div>
+    <div class="yellow"></div>
+    <div class="red"></div>
+  </div>
+  
+  <div class="article-content">
+    {{ article.content }}
+  </div>
+  
+  {% if article.tags %}
+  <div class="article-tags">
+    <strong>Tags:</strong>
+    {% for tag in article.tags %}
+    <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  {% if article.related_posts %}
+  <div class="brutalist-box">
+    <h4>Related Articles</h4>
+    <ul>
+      {% for related_post in article.related_posts %}
+      <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</article>
+{% endblock %}
