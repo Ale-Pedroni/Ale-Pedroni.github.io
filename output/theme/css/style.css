@@ -1,0 +1,308 @@
+/* Ugandan Brutalist Theme CSS
+ * Based on Ugandan flag color palette
+ * Primary: Black (#000000), Yellow/Gold (#FCDC04), Red (#D90000)
+ * Extended: Deep Maroon (#8C0303), Light Gold (#FFE866), 
+ *           Dark Charcoal (#333333), Off-White (#F5F5F5), Forest Green (#006633)
+ */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #F5F5F5;
+  color: #333333;
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-left: 8px solid #FCDC04;
+  border-right: 8px solid #D90000;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arial Black', Helvetica, sans-serif;
+  margin: 1rem 0;
+  font-weight: bold;
+  letter-spacing: -0.05em;
+}
+
+h1 { 
+  font-size: 3rem; 
+  color: #000000;
+  border-bottom: 5px solid #FCDC04;
+  display: inline-block;
+}
+
+h2 { 
+  font-size: 2.2rem; 
+  color: #8C0303;
+}
+
+h3 { 
+  font-size: 1.8rem; 
+  color: #D90000;
+}
+
+h4 { 
+  font-size: 1.4rem;
+  color: #006633;
+}
+
+p, ul, ol {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #8C0303;
+  text-decoration: none;
+  border-bottom: 2px solid #FCDC04;
+  padding-bottom: 2px;
+  transition: border-bottom 0.2s;
+}
+
+a:hover {
+  border-bottom: 2px solid #D90000;
+}
+
+code {
+  background-color: #000000;
+  color: #FFE866;
+  padding: 2px 5px;
+  font-family: monospace;
+  border-radius: 0;
+}
+
+pre {
+  background-color: #000000;
+  color: #FFE866;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-left: 5px solid #D90000;
+}
+
+blockquote {
+  border-left: 5px solid #FCDC04;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #8C0303;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: #000000;
+  margin: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #000000;
+}
+
+/* Header */
+.site-header {
+  padding: 2rem 0;
+  border-bottom: 5px solid #000000;
+  margin-bottom: 2rem;
+}
+
+.site-title {
+  font-size: 3.5rem;
+  display: block;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.site-description {
+  font-size: 1.2rem;
+  color: #D90000;
+  font-weight: bold;
+}
+
+/* Navigation */
+.main-nav {
+  margin: 1.5rem 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.main-nav li {
+  background-color: #000000;
+  transition: transform 0.2s;
+}
+
+.main-nav li:hover {
+  transform: translateY(-2px);
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.7rem 1.5rem;
+  color: #FCDC04;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.main-nav a:hover {
+  background-color: #D90000;
+  color: #F5F5F5;
+}
+
+/* Content */
+.content {
+  margin: 2rem 0;
+}
+
+/* Articles list */
+.article-list {
+  list-style: none;
+}
+
+.article-item {
+  margin-bottom: 2.5rem;
+  border-bottom: 3px solid #000000;
+  padding-bottom: 1.5rem;
+}
+
+.article-title {
+  margin-bottom: 0.5rem;
+}
+
+.article-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #8C0303;
+}
+
+.article-summary {
+  margin-top: 1rem;
+}
+
+/* Single Article */
+.article-header {
+  margin-bottom: 2rem;
+}
+
+.article-content {
+  margin-bottom: 3rem;
+}
+
+.article-tags {
+  margin: 2rem 0;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #FCDC04;
+  color: #000000;
+  padding: 0.3rem 0.7rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.tag:hover {
+  background-color: #FFE866;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 5px solid #000000;
+  text-align: center;
+  color: #333333;
+}
+
+/* Categories & Archives */
+.category-list, .archive-list {
+  list-style: none;
+}
+
+.category-item, .archive-item {
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 10px;
+    border-width: 4px;
+  }
+  
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .site-title {
+    font-size: 2.5rem;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+  }
+}
+
+/* Brutalist-specific elements */
+.brutalist-box {
+  border: 5px solid #000000;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: #FFE866;
+}
+
+.brutal-divider {
+  height: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    #000000,
+    #000000 10px,
+    #FCDC04 10px,
+    #FCDC04 20px,
+    #D90000 20px,
+    #D90000 30px
+  );
+  margin: 2rem 0;
+}
+
+.flag-colors {
+  display: flex;
+  height: 10px;
+  margin: 1rem 0;
+}
+
+.flag-colors .black {
+  background-color: #000000;
+  flex: 1;
+}
+
+.flag-colors .yellow {
+  background-color: #FCDC04;
+  flex: 1;
+}
+
+.flag-colors .red {
+  background-color: #D90000;
+  flex: 1;
+}

@@ -6,8 +6,8 @@ FEED_DOMAIN = SITEURL
 
 PATH = "content"
 OUTPUT_PATH = 'output'
-THEME_STATIC_DIR = '/uganda_theme/static'
-THEME = './uganda_theme'
+THEME_STATIC_DIR = 'theme'
+THEME = 'uganda_theme'
 
 TIMEZONE = 'Europe/Rome'
 
@@ -30,8 +30,14 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
+    ("GitHub", "https://github.com/Ale-Pedroni"),
     ("Another social link", "#"),
+)
+
+# Custom Menu Items
+MENUITEMS = (
+    ('About', '/pages/about.html'),
+    ('Contact', '/pages/contact.html'),
 )
 
 # Pagination
@@ -42,10 +48,7 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 # Display categories on menu and homepage
 DISPLAY_CATEGORIES_ON_MENU = True
@@ -58,4 +61,5 @@ DISPLAY_PAGES_ON_MENU = True
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.loopcontrols', 'jinja2.ext.do']}
 
 # Custom settings for the theme
-CURRENTYEAR = 2025  # Update this each year
+import datetime
+CURRENTYEAR = datetime.date.today().year 
