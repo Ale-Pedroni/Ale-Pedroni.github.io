@@ -12,6 +12,13 @@
   <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed">
   {% endif %}
   
+  <!-- Favicons -->
+  <link rel="icon" href="{{ SITEURL }}/static/favicon.ico" sizes="any">
+  <link rel="icon" href="{{ SITEURL }}/static/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ SITEURL }}/static/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="{{ SITEURL }}/static/apple-touch-icon.png">
+  <link rel="manifest" href="{{ SITEURL }}/static/site.webmanifest">
+  
   {% block extra_head %}{% endblock %}
 </head>
 <body>

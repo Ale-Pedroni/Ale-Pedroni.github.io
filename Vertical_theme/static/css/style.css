@@ -12,6 +12,9 @@
     font-display: swap;
 }
 
+/* Import Space Mono from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 :root {
     /* Primary Colors (directly from the flag) */
     --black: #000000;
@@ -27,7 +30,7 @@
     
     /* Fonts */
     --heading-font: 'Brodish', 'Impact', sans-serif;
-    --body-font: 'Helvetica Neue', Arial, sans-serif;
+    --body-font: 'Space Mono', monospace; /* Changed to Space Mono */
 }
 
 * {

@@ -8,7 +8,7 @@ PATH = "content"
 OUTPUT_PATH = 'output'
 STATIC_PATHS = ['static']
 THEME_STATIC_DIR = 'static'
-THEME = 'kev_quirk'
+THEME = 'Vertical_theme'
 
 TIMEZONE = 'Europe/Rome'
 
