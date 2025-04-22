@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{% if DEFAULT_LANG %}{{ DEFAULT_LANG }}{% else %}en{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  
+  <link rel="stylesheet" href="{{ SITEURL }}/{{THEME_STATIC_DIR}}/css/style.css">
+  
+  {% if FEED_ALL_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed">
+  {% endif %}
+  
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <div id="main-wrapper">
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+    
+    <div id="sidebar">
+      <h1 class="site-title">
+        <a href="{{ SITEURL }}/">{{ SITENAME }}</a>
+      </h1>
+      
+      {% if SITESUBTITLE %}
+      <p class="site-description">{{ SITESUBTITLE }}</p>
+      {% endif %}
+      
+      <div class="flag-colors">
+        <div class="black"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+      </div>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="{{ SITEURL }}/">Home</a></li>
+          <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+          {% for title, link in MENUITEMS %}
+          <li><a href="{{ link }}">{{ title }}</a></li>
+          {% endfor %}
+          {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+          <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {% endfor %}
+          {% endif %}
+          <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+        </ul>
+      </nav>
+      
+      <div class="brutal-divider"></div>
+      
+    </div>
+  </div>
+  
+  <footer id="site-footer">
+    <div class="footer-content">
+      <p>Powered by <a href="https://getpelican.com/">Pelican</a> | Brutalist Theme</p>
+      <div class="social-links">
+        <a href="https://github.com/your-username">GitHub</a> |
+        <a href="#">Another social link</a>
+      </div>
+    </div>
+  </footer>
+  
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,9 +1,9 @@
 Title: Welcome to the Brutalist Uganda-Inspired Site
 Date: 2025-04-21 10:00
-Category: Design
+category: Design
 Tags: brutalism, design, uganda
 Slug: welcome-to-brutalist-site
-Author: Your Name
+Author: Plasma
 Summary: An introduction to this brutalist website with a Ugandan flag-inspired color palette.
 
 # Welcome to Our Brutalist Website

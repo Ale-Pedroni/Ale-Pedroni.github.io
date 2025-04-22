@@ -1,308 +1,181 @@
-/* Ugandan Brutalist Theme CSS
- * Based on Ugandan flag color palette
- * Primary: Black (#000000), Yellow/Gold (#FCDC04), Red (#D90000)
- * Extended: Deep Maroon (#8C0303), Light Gold (#FFE866), 
- *           Dark Charcoal (#333333), Off-White (#F5F5F5), Forest Green (#006633)
- */
+/* Uganda Flag Color Palette */
+:root {
+  /* Primary Colors (directly from the flag) */
+  --black: #000000;
+  --yellow: #FCDC04;
+  --red: #D90000;
+  
+  /* Extended Palette */
+  --maroon: #8C0303;
+  --light-gold: #FFE866;
+  --dark-charcoal: #333333;
+  --off-white: #F5F5F5;
+  --forest-green: #006633;
+}
 
-/* Reset and Base Styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base Styles */
 body {
-  font-family: 'Courier New', monospace;
-  background-color: #F5F5F5;
-  color: #333333;
+  font-family: monospace;
+  background-color: var(--off-white);
+  color: var(--black);
   line-height: 1.6;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
-  border-left: 8px solid #FCDC04;
-  border-right: 8px solid #D90000;
+  border-left: 10px solid var(--red);
+  border-right: 10px solid var(--yellow);
+  min-height: 100vh;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Arial Black', Helvetica, sans-serif;
-  margin: 1rem 0;
+  margin: 1.5rem 0 1rem;
   font-weight: bold;
   letter-spacing: -0.05em;
 }
 
-h1 { 
-  font-size: 3rem; 
-  color: #000000;
-  border-bottom: 5px solid #FCDC04;
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 4px solid var(--yellow);
   display: inline-block;
 }
 
-h2 { 
-  font-size: 2.2rem; 
-  color: #8C0303;
+h2 {
+  font-size: 2rem;
+  border-left: 4px solid var(--red);
+  padding-left: 10px;
 }
 
-h3 { 
-  font-size: 1.8rem; 
-  color: #D90000;
+p {
+  margin-bottom: 1rem;
 }
 
-h4 { 
-  font-size: 1.4rem;
-  color: #006633;
-}
-
-p, ul, ol {
-  margin-bottom: 1.2rem;
-  font-size: 1.1rem;
-}
-
+/* Links */
 a {
-  color: #8C0303;
+  color: var(--maroon);
   text-decoration: none;
-  border-bottom: 2px solid #FCDC04;
-  padding-bottom: 2px;
-  transition: border-bottom 0.2s;
+  border-bottom: 2px solid var(--yellow);
+  font-weight: bold;
+  transition: background-color 0.2s;
 }
 
 a:hover {
-  border-bottom: 2px solid #D90000;
-}
-
-code {
-  background-color: #000000;
-  color: #FFE866;
-  padding: 2px 5px;
-  font-family: monospace;
-  border-radius: 0;
-}
-
-pre {
-  background-color: #000000;
-  color: #FFE866;
-  padding: 1rem;
-  overflow-x: auto;
-  margin: 1.5rem 0;
-  border-left: 5px solid #D90000;
-}
-
-blockquote {
-  border-left: 5px solid #FCDC04;
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: #8C0303;
-}
-
-hr {
-  border: none;
-  height: 3px;
-  background-color: #000000;
-  margin: 2rem 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border: 3px solid #000000;
+  background-color: var(--light-gold);
 }
 
 /* Header */
 .site-header {
   padding: 2rem 0;
-  border-bottom: 5px solid #000000;
   margin-bottom: 2rem;
+  border-bottom: 4px solid var(--black);
 }
 
 .site-title {
-  font-size: 3.5rem;
-  display: block;
-  color: #000000;
-  text-transform: uppercase;
-}
-
-.site-description {
-  font-size: 1.2rem;
-  color: #D90000;
-  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.08em;
 }
 
 /* Navigation */
-.main-nav {
-  margin: 1.5rem 0;
-}
-
 .main-nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.main-nav li {
-  background-color: #000000;
-  transition: transform 0.2s;
-}
-
-.main-nav li:hover {
-  transform: translateY(-2px);
+  gap: 1.5rem;
 }
 
 .main-nav a {
-  display: block;
-  padding: 0.7rem 1.5rem;
-  color: #FCDC04;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  font-weight: bold;
-  border-bottom: none;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border: none;
 }
 
 .main-nav a:hover {
-  background-color: #D90000;
-  color: #F5F5F5;
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 /* Content */
 .content {
   margin: 2rem 0;
+  /* Add left and right padding to the content area */
+  padding: 0 1rem; /* Adjust '1rem' as needed */
 }
 
-/* Articles list */
-.article-list {
+/* Posts List */
+.posts-list {
   list-style: none;
 }
 
-.article-item {
-  margin-bottom: 2.5rem;
-  border-bottom: 3px solid #000000;
-  padding-bottom: 1.5rem;
-}
-
-.article-title {
-  margin-bottom: 0.5rem;
-}
-
-.article-meta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: #8C0303;
-}
-
-.article-summary {
-  margin-top: 1rem;
-}
-
-/* Single Article */
-.article-header {
+.post-item {
   margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid var(--yellow);
 }
 
-.article-content {
-  margin-bottom: 3rem;
-}
-
-.article-tags {
-  margin: 2rem 0;
-}
-
-.tag {
-  display: inline-block;
-  background-color: #FCDC04;
-  color: #000000;
-  padding: 0.3rem 0.7rem;
-  margin-right: 0.5rem;
+.post-title {
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  transition: background-color 0.2s;
 }
 
-.tag:hover {
-  background-color: #FFE866;
+.post-date {
+  display: inline-block;
+  background-color: var(--black);
+  color: var(--yellow);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Single Post */
+.post-header {
+  margin-bottom: 2rem;
 }
 
 /* Footer */
 .site-footer {
-  margin-top: 3rem;
+  margin-top: 4rem;
   padding: 2rem 0;
-  border-top: 5px solid #000000;
-  text-align: center;
-  color: #333333;
+  border-top: 4px solid var(--black);
+  font-size: 0.9rem;
 }
 
-/* Categories & Archives */
-.category-list, .archive-list {
-  list-style: none;
+/* Button */
+.button {
+  display: inline-block;
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  border: 2px solid var(--black);
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.category-item, .archive-item {
-  margin-bottom: 1rem;
+.button:hover {
+  background-color: var(--red);
+  color: var(--off-white);
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   body {
-    padding: 0 10px;
-    border-width: 4px;
-  }
-  
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.5rem; }
-  
-  .site-title {
-    font-size: 2.5rem;
+    padding: 0 15px;
+    border-width: 5px;
   }
   
   .main-nav ul {
     flex-direction: column;
+    gap: 0.5rem;
   }
-}
-
-/* Brutalist-specific elements */
-.brutalist-box {
-  border: 5px solid #000000;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  background-color: #FFE866;
-}
-
-.brutal-divider {
-  height: 20px;
-  background: repeating-linear-gradient(
-    45deg,
-    #000000,
-    #000000 10px,
-    #FCDC04 10px,
-    #FCDC04 20px,
-    #D90000 20px,
-    #D90000 30px
-  );
-  margin: 2rem 0;
-}
-
-.flag-colors {
-  display: flex;
-  height: 10px;
-  margin: 1rem 0;
-}
-
-.flag-colors .black {
-  background-color: #000000;
-  flex: 1;
-}
-
-.flag-colors .yellow {
-  background-color: #FCDC04;
-  flex: 1;
-}
-
-.flag-colors .red {
-  background-color: #D90000;
-  flex: 1;
 }

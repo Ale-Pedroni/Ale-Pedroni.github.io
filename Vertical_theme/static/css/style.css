@@ -1,0 +1,351 @@
+/* Reset some defaults */
+/* Uganda Flag Color Palette */
+
+/* Font Import */
+@font-face {
+    font-family: 'Brodish';
+    src: url('../fonts/Brodish.woff2') format('woff2'),
+         url('../fonts/Brodish.woff') format('woff'),
+         url('../fonts/Brodish.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Primary Colors (directly from the flag) */
+    --black: #000000;
+    --yellow: #FCDC04;
+    --red: #D90000;
+    
+    /* Extended Palette */
+    --maroon: #8C0303;
+    --light-gold: #FFE866;
+    --dark-charcoal: #333333;
+    --off-white: #F5F5F5;
+    --forest-green: #006633;
+    
+    /* Fonts */
+    --heading-font: 'Brodish', 'Impact', sans-serif;
+    --body-font: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+    color: var(--dark-charcoal);
+    line-height: 1.6;
+    padding: 1rem;  /* Add padding around entire body */
+    gap: 1.5rem;    /* Space between sidebar and content */
+}
+
+#main-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 1.5rem;
+}
+
+/* Content area - now centered and ordered first */
+#content {
+    flex-grow: 1;
+    order: 1;
+    padding: 2.5rem;  /* Increased padding */
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid var(--off-white);  /* Subtle border */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);  /* Soft shadow for depth */
+}
+
+/* Right-aligned Sidebar */
+#sidebar {
+    width: 280px;
+    order: 2;
+    background-color: var(--dark-charcoal);  /* Changed from black to dark grey */
+    color: var(--yellow);
+    padding: 1rem 1rem;  /* Increased padding */
+    position: sticky;
+    top: 1rem;  /* Space from top */
+    height: calc(100vh - 2rem);  /* Account for body padding */
+    overflow-y: auto;
+    border-left: 4px solid var(--red);
+    margin-right: 3rem;  /* Space on right edge */
+}
+
+/* Site title in sidebar */
+#sidebar .site-title {
+    font-family: var(--heading-font);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    color: #fff;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Navigation links */
+#sidebar a {
+    display: block;
+    color: var(--yellow);
+    text-decoration: none;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    border-radius: 3px;
+}
+
+#sidebar a:hover {
+    background-color: var(--red);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Flag colors divider */
+.flag-colors {
+    display: flex;
+    margin: 1.5rem 0;
+    height: 10px;
+}
+
+.flag-colors .black {
+    flex: 1;
+    background-color: var(--black);
+}
+
+.flag-colors .yellow {
+    flex: 1;
+    background-color: var(--yellow);
+}
+
+.flag-colors .red {
+    flex: 1;
+    background-color: var(--red);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    margin: 1.5rem 0 1rem 0;
+    line-height: 1.2;
+    font-weight: normal; /* Brodish is naturally bold */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--red);
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--red);
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: var(--maroon);
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Links in content */
+#content a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid var(--yellow);
+    transition: all 0.2s ease;
+    padding: 0 2px;
+}
+
+#content a:hover {
+    color: var(--black);
+    background-color: var(--light-gold);
+    border-bottom: 1px solid var(--black);
+}
+
+/* Brutalist box for related content */
+.brutalist-box {
+    border: 3px solid var(--black);
+    padding: 2rem;  /* Increased padding */
+    margin: 3rem 0;  /* More vertical space */
+    background-color: var(--off-white);
+    box-shadow: 8px 8px 0 var(--yellow);
+}
+
+/* Buttons for interactive elements */
+button, .btn {
+    background-color: var(--red);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--black);
+    color: var(--yellow);
+    transform: translateY(-2px);
+}
+
+.btn.read-more {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.btn.read-more:hover {
+  background-color: var(--red); 
+  color: var(--off-white); /* Light text on red background */
+}
+
+/* Article styling */
+.article-list {
+    list-style: none;
+}
+
+.article-item {
+    margin-bottom: 4rem;  /* More space between articles */
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.article-tags {
+    margin: 2rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--off-white);
+    color: var(--maroon);
+    padding: 0.3rem 0.6rem;
+    margin: 0.2rem;
+    border: 1px solid var(--dark-charcoal);
+    text-decoration: none;
+}
+
+.tag:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.article-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--yellow);
+}
+
+/* Site footer */
+#site-footer {
+    background-color: var(--dark-charcoal);
+    color: var(--off-white);
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 3px solid var(--red);
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#site-footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#site-footer a:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 0.5rem;  /* Less padding on mobile */
+    }
+    
+    #sidebar {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        position: relative;
+        border-left: none;
+        border-bottom: 3px solid var(--red);
+        padding: 2rem 1.5rem;
+    }
+    
+    #content {
+        padding: 1.5rem;  /* Still keep some padding */
+        max-width: 100%;
+    }
+    
+    .article-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #main-wrapper {
+        flex-direction: column;
+    }
+}
