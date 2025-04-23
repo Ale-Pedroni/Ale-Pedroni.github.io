@@ -8,7 +8,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-RELATIVE_URLS = False
+
 
 # Following items are often useful when publishing
 
