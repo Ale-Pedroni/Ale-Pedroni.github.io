@@ -12,3 +12,6 @@ jobs:
       id-token: "write"
     with:
       settings: "publishconf.py"
+      theme: "Vertical_theme"
+      python: "3.9"
+      requirements: "pelican[markdown] typogrify"
