@@ -14,6 +14,9 @@ TIMEZONE = 'Europe/Rome'
 
 DEFAULT_LANG = 'En'
 
+# For English dates (default)
+LOCALE = ('en_US.utf8', 'en_US')
+
 TYPOGRIFY = False
 
 GITHUB_URL = "https://github.com/Ale-Pedroni"
