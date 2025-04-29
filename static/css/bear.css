@@ -1,0 +1,600 @@
+/* ==========================================================================
+   Bear Blog – Brutalist Uganda Flag Theme
+   ========================================================================== */
+
+/* -----------------------------
+   FONT IMPORTS
+   ----------------------------- */
+@import url('https://fonts.cdnfonts.com/css/brodish');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* -----------------------------
+   CSS VARIABLES
+   ----------------------------- */
+:root {
+    /* Primary Colors (Uganda flag) */
+    --black: #000000;
+    --yellow: #FCDC04;
+    --red: #D90000;
+
+    /* Extended Palette */
+    --maroon: #8C0303;
+    --light-gold: #FFE866;
+    --dark-charcoal: #333333;
+    --off-white: #F5F5F5;
+    --forest-green: #006633;
+
+    /* Typography */
+    --heading-font: 'BRODISH', sans-serif;
+    --body-font: 'Space Mono', monospace;
+
+    /* Theme Colors */
+    --link-color: var(--black);
+    --link-hover-color: var(--red);
+    --accent-color: var(--yellow);
+    --text-color: var(--black);
+    --background-color: var(--yellow);
+    --alternate-background: #FFFCF0;
+    --border-color: var(--black);
+
+    /* Design Elements */
+    --brutalist-border: 4px solid var(--black);
+    --brutalist-shadow: 6px 6px 0 var(--red);
+}
+
+/* -----------------------------
+   BASE LAYOUT
+   ----------------------------- */
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1rem;
+    padding-top: 2rem; /* Add some space above the header */
+}
+
+/* center the header above the wrapper */
+.site-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;      /* More space below header */
+  padding: 0 1rem; /* Add padding for smaller screens */
+}
+
+/* Layout wrapper for content and sidebar */
+#main-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* top‑align content + sidebar */
+    gap: 2rem; /* Increased gap */
+    max-width: 1200px;
+    width: 95%; /* Prevent touching edges on medium screens */
+    margin: 0 auto;          /* center on page */
+}
+
+/* Sidebar adjustments */
+#sidebar {
+    width: 300px; /* Give sidebar a fixed width */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    display: flex; /* Use flexbox for vertical spacing */
+    flex-direction: column;
+    gap: 1.5rem; /* Consistent spacing between sidebar items */
+}
+
+/* Site title styling */
+.site-title {
+    font-family: var(--heading-font);
+    font-size: 2.5rem; /* Slightly larger */
+    margin-bottom: 0.5rem; /* Reduced margin */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--black);
+    border-bottom: none; /* Removed border-bottom */
+    padding-bottom: 0;
+}
+.site-title a {
+    color: inherit; /* Ensure link inherits color */
+    text-decoration: none;
+    border-bottom: none; /* Remove link underline */
+}
+.site-title a:hover {
+    background-color: transparent; /* Remove hover background */
+    color: var(--red); /* Change color on hover */
+}
+
+
+/* Site subtitle */
+.site-description {
+    font-family: var(--body-font);
+    font-size: 1rem; /* Slightly larger */
+    color: var(--dark-charcoal);
+    margin-bottom: 0; /* Remove bottom margin, rely on header margin */
+}
+
+/* Uganda flag color bars */
+.flag-colors {
+    display: flex;
+    height: 10px;
+    /* margin-bottom removed, using gap in #sidebar */
+}
+.flag-colors .black  { flex: 1; background: var(--black); }
+.flag-colors .yellow{ flex: 1; background: var(--yellow); }
+.flag-colors .red   { flex: 1; background: var(--red); }
+
+/* Brutalist divider */
+.brutal-divider {
+    height: 4px;
+    background: var(--black);
+    /* margin removed, using gap in #sidebar */
+}
+
+/* Social links container */
+.social-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 0.75rem; /* Space between links */
+    /* margin-top removed, using gap in #sidebar */
+    font-size: 0.9rem;
+    align-items: center; /* Center links if sidebar is wider */
+}
+.social-links a {
+    display: inline-block; /* Needed for padding/border */
+    padding: 0.4rem 0.8rem;
+    color: var(--black);
+    background-color: var(--off-white);
+    border: 2px solid var(--black); /* Thinner border than main nav */
+    box-shadow: 3px 3px 0 var(--red); /* Smaller shadow */
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem; /* Smaller font */
+}
+.social-links a:hover {
+    background-color: var(--red);
+    color: var(--off-white);
+    border-color: var(--black);
+    box-shadow: -2px -2px 0 var(--yellow);
+    transform: translate(2px, 2px);
+}
+
+/* -----------------------------
+   HEADER (Removed duplicate generic header rule)
+   ----------------------------- */
+/* header { ... } */ /* Remove this if it's conflicting with .site-header */
+
+/* -----------------------------
+   NAVIGATION (sidebar menu)
+   ----------------------------- */
+#sidebar nav, .main-nav {
+    display: block;
+    /* margin removed, using gap in #sidebar */
+    padding: 0;
+    text-align: center;
+}
+
+#sidebar nav a, .main-nav a {
+    display: block; /* Make buttons full width of their container */
+    margin: 0; /* Remove individual margins, rely on li */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: var(--off-white);
+    color: var(--black);
+    border: var(--brutalist-border);
+    box-shadow: var(--brutalist-shadow);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease-in-out;
+}
+
+#sidebar nav a:hover, .main-nav a:hover {
+    background-color: var(--red);
+    color: var(--off-white);
+    border-color: var(--black);
+    box-shadow: -4px -4px 0 var(--yellow);
+    transform: translate(4px,4px);
+}
+
+/* -----------------------------
+   MAIN CONTENT
+   ----------------------------- */
+#content, main {
+    flex-grow: 1;
+    /* max-width: 850px; */ /* Let flexbox handle width */
+    margin: 0; /* Remove margin */
+    padding: 1.5rem; /* Slightly more padding */
+    background-color: var(--off-white);
+    color: var(--text-color);
+    border: var(--brutalist-border);
+    box-shadow: var(--brutalist-shadow);
+    font-size: 1rem;
+    line-height: 1.4; /* Slightly more line height */
+}
+
+/* -----------------------------
+   TYPOGRAPHY & LINKS
+   ----------------------------- */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--black);
+    transition: background-color 0.2s, color 0.2s, border-bottom-color 0.2s; /* Added border transition */
+}
+a:hover {
+    background-color: var(--link-hover-color);
+    color: var(--off-white);
+    border-bottom-color: var(--link-hover-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 1.5rem 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+h1 { font-size: 2.5rem; margin-top: 0; }
+h2, h3, h4, h5, h6 { font-family: var(--body-font); }
+h2.article-title { /* Specificity for article titles */
+    font-size: 1.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: var(--brutalist-border);
+    margin-top: 0; /* Remove top margin for first element in li */
+    margin-bottom: 0.75rem; /* Space below title */
+}
+h2.article-title a {
+    color: inherit; /* Title link color */
+    border-bottom: none;
+}
+h2.article-title a:hover {
+    background-color: transparent;
+    color: var(--red);
+}
+h3 { font-size: 1.4rem; color: var(--red); }
+
+/* -----------------------------
+   ELEMENTS & COMPONENTS
+   ----------------------------- */
+p { margin-bottom: 0.4rem; }
+pre, code {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    background: var(--off-white);
+    color: var(--text-color);
+    padding: 1rem;
+    border: var(--brutalist-border);
+    overflow-x: auto;
+    box-shadow: var(--brutalist-shadow);
+}
+blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: var(--brutalist-border);
+    background: var(--light-gold);
+    color: var(--dark-charcoal);
+    box-shadow: var(--brutalist-shadow);
+}
+ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+li { margin-bottom: 0.75rem; }
+hr {
+    border: 0;
+    border-top: var(--brutalist-border);
+    margin: 2rem 0;
+}
+img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    height: auto;
+    border: var(--brutalist-border);
+    box-shadow: var(--brutalist-shadow);
+}
+
+/* -----------------------------
+   BUTTONS
+   ----------------------------- */
+button, input[type="submit"], input[type="reset"], .button, .btn {
+    background: var(--red);
+    color: var(--off-white);
+    border: var(--brutalist-border);
+    padding: 1rem 2rem;
+    font-family: var(--body-font);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: var(--brutalist-shadow);
+    transition: all 0.2s ease-in-out;
+}
+button:hover, .btn:hover, .button:hover {
+    background: var(--black);
+    color: var(--accent-color);
+    box-shadow: -4px -4px 0 var(--yellow);
+    transform: translate(4px,4px);
+}
+
+/* Override Read More button styling */
+.btn.read-more {
+    display: inline-block; /* Make it behave like a block for styling */
+    background: transparent;
+    border: 2px solid var(--black); /* Add border */
+    box-shadow: 3px 3px 0 var(--black); /* Add subtle shadow */
+    color: var(--black);
+    font-size: 0.9rem; /* Slightly smaller */
+    padding: 0.3rem 0.8rem; /* Add padding */
+    text-transform: uppercase; /* Make it uppercase */
+    transition: all 0.2s ease;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-top: 1rem; /* Space above read more */
+}
+
+.btn.read-more:hover {
+    background-color: var(--black); /* Invert colors */
+    color: var(--yellow);
+    box-shadow: -2px -2px 0 var(--red); /* Shift shadow */
+    transform: translate(2px, 2px);
+}
+
+/* -----------------------------
+   FOOTER
+   ----------------------------- */
+footer, #site-footer {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    align-items: flex-start;
+    font-size: 0.8rem;
+    background: var(--off-white);
+}
+footer a, #site-footer a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+footer a:hover, #site-footer a:hover {
+    background: var(--link-hover-color);
+    color: var(--off-white);
+    border-bottom: 2px solid var(--link-hover-color);
+}
+
+/* -----------------------------
+   RESPONSIVE DESIGN
+   ----------------------------- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 1rem;
+        gap: 0.5rem;
+    }
+    #main-wrapper {
+        flex-direction: column; /* Stack columns on mobile */
+        width: 100%;
+        gap: 1rem;
+    }
+    #sidebar {
+        width: 100%; /* Full width */
+        order: 2; /* Move sidebar below content */
+        border-bottom: var(--brutalist-border); /* Add border when stacked */
+        padding-bottom: 1rem; /* Add padding at bottom */
+        gap: 1rem; /* Adjust gap for mobile */
+    }
+    #content, main {
+        width: auto; /* Let it fill */
+        order: 1; /* Content first */
+        margin: 0 0.5rem; /* Add horizontal margin */
+        padding: 1rem;
+    }
+    .site-header {
+        margin-bottom: 1rem;
+    }
+    .site-title {
+        font-size: 2rem;
+    }
+    .social-links {
+        flex-direction: row; /* Links side-by-side on mobile */
+        justify-content: center;
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+    .social-links a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    #sidebar nav a, .main-nav a {
+        display: inline-block; /* Allow multiple buttons per line */
+        width: auto; /* Adjust width */
+        margin: 0.25rem; /* Add margin between buttons */
+    }
+    .main-nav ul {
+        text-align: center; /* Center the inline-block buttons */
+    }
+    .article-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+    }
+    h2.article-title {
+        font-size: 1.5rem;
+    }
+    .btn.read-more {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--dark-charcoal);
+        color: var(--off-white);
+    }
+    #content, main, footer {
+        background: var(--dark-charcoal);
+        color: var(--off-white);
+        border-color: var(--maroon);
+        box-shadow: 6px 6px 0 var(--maroon);
+    }
+    nav a, #sidebar nav a, .main-nav a {
+        background: var(--maroon);
+        color: var(--off-white);
+        border-color: var(--yellow);
+        box-shadow: 6px 6px 0 var(--red);
+    }
+    nav a:hover, #sidebar nav a:hover, .main-nav a:hover {
+        background: var(--yellow);
+        color: var(--black);
+        border-color: var(--maroon);
+        box-shadow: -4px -4px 0 var(--red);
+    }
+    a {
+        color: var(--yellow);
+        border-bottom-color: var(--yellow);
+    }
+    a:hover {
+        background: var(--maroon);
+        border-bottom-color: var(--maroon);
+    }
+    button, .btn, .button {
+        background: var(--maroon);
+        color: var(--yellow);
+        border-color: var(--yellow);
+    }
+    button:hover, .btn:hover, .button:hover {
+        background: var(--yellow);
+        color: var(--maroon);
+        box-shadow: -4px -4px 0 var(--red);
+    }
+    #site-footer {
+        background-color: var(--dark-charcoal);
+        border-top-color: var(--maroon);
+    }
+    .brutal-divider {
+        background: var(--yellow);
+    }
+
+    /* Adjust link colors for dark mode */
+    a {
+        color: var(--yellow);
+        border-bottom-color: var(--yellow);
+    }
+    a:hover {
+        background-color: var(--maroon);
+        color: var(--yellow); /* Keep text yellow on hover */
+        border-bottom-color: var(--maroon);
+    }
+    .site-title a:hover {
+        background-color: transparent;
+        color: var(--light-gold); /* Lighter yellow for title hover */
+    }
+    .article-meta a {
+        color: var(--light-gold);
+        border-bottom-color: var(--light-gold);
+    }
+    .article-meta a:hover {
+        color: var(--yellow);
+        border-bottom-color: var(--yellow);
+    }
+    h2.article-title a:hover {
+        background-color: transparent;
+        color: var(--light-gold);
+    }
+
+    /* Adjust button/link styles for dark mode */
+    .social-links a {
+        background-color: var(--dark-charcoal);
+        color: var(--yellow);
+        border-color: var(--yellow);
+        box-shadow: 3px 3px 0 var(--maroon);
+    }
+    .social-links a:hover {
+        background-color: var(--yellow);
+        color: var(--dark-charcoal);
+        border-color: var(--maroon);
+        box-shadow: -2px -2px 0 var(--red);
+    }
+    .btn.read-more {
+        color: var(--yellow);
+        border-color: var(--yellow);
+        box-shadow: 3px 3px 0 var(--yellow);
+    }
+    .btn.read-more:hover {
+        background-color: var(--yellow);
+        color: var(--dark-charcoal);
+        box-shadow: -2px -2px 0 var(--maroon);
+    }
+}
+
+/* page title on index */
+.page_title {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* pagination wrapper */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* styling for nav list in sidebar */
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+}
+.main-nav li {
+  margin-bottom: 0.5rem;
+}
+
+/* Article List Specifics */
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.article-item {
+    margin-bottom: 3rem; /* More space between articles */
+    padding-bottom: 1.5rem; /* Space before potential border */
+    border-bottom: 2px dashed var(--dark-charcoal); /* Add separator */
+}
+.article-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none; /* No border on last item */
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 1rem; /* Space below metadata */
+}
+.article-meta span {
+    margin-right: 0.75rem; /* Space between meta items */
+}
+.article-meta a {
+    color: var(--dark-charcoal); /* Meta links less prominent */
+    border-bottom: 1px dotted var(--dark-charcoal);
+}
+.article-meta a:hover {
+    color: var(--red);
+    background-color: transparent;
+    border-bottom-color: var(--red);
+}
+
+.article-summary {
+    margin-bottom: 1rem; /* Space below summary */
+}
+.article-summary p:last-child {
+    margin-bottom: 0; /* Remove margin from last paragraph in summary */
+}
